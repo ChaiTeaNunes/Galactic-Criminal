@@ -44,7 +44,7 @@ class Background(object):
             for y in range(0, round(HEIGHT / self.height) + 1):
                 self.images.append(self.canvas.create_image(x * self.width, y * self.height, image=self.bg, anchor="nw"))
         
-        self.speed = speed
+        self.speed = speed * 2
 
     def update(self):
         i = 0
@@ -119,11 +119,11 @@ class Spaceship(Ship):
 
     def steer_left(self, event):
         self.canvas.itemconfig(self.image, image=self.images[1])
-        self.velX = -1
+        self.velX = -2
 
     def steer_right(self, event):
         self.canvas.itemconfig(self.image, image=self.images[2])
-        self.velX = 1
+        self.velX = 2
 
     def no_steer(self, event):
         self.canvas.itemconfig(self.image, image=self.images[0])
